@@ -22,11 +22,27 @@ public class NioClientHandler implements Runnable{
             for(;;) {
                 int selects = selector.select();
                 if(selects == 0) continue;
+                
+                /**
+                 * 获取可用channel的集合
+                 */
                 Set<SelectionKey> selectedKeys = selector.selectedKeys();
                 Iterator<SelectionKey> iterator = selectedKeys.iterator();
                 while(iterator.hasNext()) {
+                    
+                    /**
+                     * selectionKey实例
+                     */
                     SelectionKey selectionKey = iterator.next();
+                    
+                    /**
+                     * **移除Set中的当前selectionKey**
+                     */
                     iterator.remove();
+                    
+                    /**
+                     * 处理不同事件
+                     */
                     if(selectionKey.isAcceptable()) {
                         
                     }else if(selectionKey.isReadable()) {
