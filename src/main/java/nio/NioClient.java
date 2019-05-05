@@ -15,6 +15,7 @@ public class NioClient {
         nioClient.start("nioClient");
     }
     
+    @SuppressWarnings("resource")
     public void start(String nickname) throws IOException {
         //连接服务端
         SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress("127.0.0.1", 8000));
@@ -30,9 +31,6 @@ public class NioClient {
         while(scanner.hasNextLine()) {
             String request = scanner.nextLine();
             if(request != null && !request.isEmpty()) {
-                if("exit".equals(request)) {
-                    scanner.close();
-                }
                 socketChannel.write(Charset.forName("UTF-8").encode(nickname + " : " +request));
             }
         }
