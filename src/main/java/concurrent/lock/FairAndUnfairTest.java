@@ -1,4 +1,4 @@
-package concurrent;
+package concurrent.lock;
 
 import java.util.ArrayList;
 import java.util.Collection;
