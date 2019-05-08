@@ -1,4 +1,4 @@
-package concurrent;
+package concurrent.atomic;
 
 import java.util.concurrent.atomic.AtomicIntegerArray;
 
