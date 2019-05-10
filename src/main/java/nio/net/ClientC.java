@@ -1,4 +1,4 @@
-package nio;
+package nio.net;
 
 import java.io.IOException;
 

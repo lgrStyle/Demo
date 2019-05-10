@@ -1,11 +1,11 @@
-package nio;
+package nio.net;
 
 import java.io.IOException;
 
-public class ClientB {
+public class ClientA {
 
     public static void main(String[] args) throws IOException {
         NioClient nioClient = new NioClient();
-        nioClient.start("ClientB");
+        nioClient.start("ClientA");
     }
 }
